@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-	hexToEndian("ff00000000000000000000000000000000000000000000000000000000000000")
 	littleEnd, bigEnd, numBytes := hexToEndian("ff00000000000000000000000000000000000000000000000000000000000000")
 	endianToHex(bigEnd, littleEnd, numBytes)
 }
@@ -24,7 +23,7 @@ func hexToEndian(hexNum string) (*big.Int, *big.Int, int) { // буде виво
 
 	littleEndian := new(big.Int)
 	littleEndian = littleEndian.SetBytes(revSlice)
-	fmt.Println("little endian endian:", littleEndian)
+	fmt.Println("little endian :", littleEndian)
 
 	bigEndian := new(big.Int)
 	bigEndian, _ = bigEndian.SetString(hexNum, 16)
